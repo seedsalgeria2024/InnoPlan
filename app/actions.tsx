@@ -113,7 +113,7 @@ Ensure the output is detailed and clearly assigned to help the startup owner man
 `;
 
 // Main function to handle conversation logic
-export async function continueConversation(messages) {
+export async function continueConversation(messages : any) {
 
 
   const ip = headers().get("x-forwarded-for") ?? "unknown";
