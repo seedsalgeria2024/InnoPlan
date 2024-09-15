@@ -9,9 +9,9 @@ import { Analytics } from "@vercel/analytics/react";
 const FigtreeFont = Figtree({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Next.js AI Chatbot — NVIDIA NIM + Vercel AI SDK",
+  title: "InnoPlan Chatbot — AI-Powered Business Planning",
   description:
-    "An open-source AI chatbot app template built with Next.js, the Vercel AI SDK and NVIDIA NIM.",
+    "AInnoPlan Chatbot helps you generate business plans, pitch scripts, and dynamic task assignments for your startup ideas, powered by AI.",
 };
 
 export default function RootLayout({
