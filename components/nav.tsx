@@ -6,10 +6,10 @@ import { Button } from "./ui/button";
 export default function Nav() {
   return (
     <nav className="fixed flex w-full items-center justify-between bg-background p-6 md:bg-transparent">
-      <h1>nvidia + vercel</h1>
+      <h1>InnoPlan</h1>
       <div className="flex items-center gap-4">
         <Link
-          href="https://github.com/lakshaybhushan/nvidia-nim-nextjs"
+          href="https://github.com/seedsalgeria2024/InnoPlan"
           target="_blank"
           rel="noopener noreferrer">
           <Button

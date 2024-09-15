@@ -68,65 +68,28 @@ export default function Chat() {
     return (
       <div className="stretch mx-auto flex min-h-screen w-full max-w-xl flex-col justify-center px-4 pb-[8rem] pt-[6rem] md:px-0 md:pt-[4rem] xl:pt-[2rem]">
         <h1 className="text-center text-5xl font-medium tracking-tighter">
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:text-nvidia transition-all duration-150 ease-linear"
-            href="https://build.nvidia.com/explore/discover">
-            NVIDIA NIM
-          </a>{" "}
-          +{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transition-all duration-150 ease-linear hover:text-blue-600"
-            href="https://sdk.vercel.ai/">
-            Vercel AI SDK
-          </a>{" "}
-          Chatbot Demo
+          Welcome to InnoPlan Chatbot!
         </h1>
 
         <div className="mt-6 flex items-center justify-center gap-4">
-          <BsNvidia className="text-nvidia mr-4 size-20" />
-          <span className="text-8xl">+</span>
-          <IoLogoVercel className="size-20" />
+          <span className="text-6xl">🤖</span>
         </div>
 
         <div className="mt-6 px-3 md:px-0">
-          <h2 className="text-base font-medium">Points to note:</h2>
-          <ul className="ml-6 mt-2 flex list-disc flex-col items-start gap-2.5 text-sm text-primary/80">
-            <li>
-              Since the NVIDIA&apos;s NIM API Inference only provides{" "}
-              <span className="text-nvidia font-medium">1000 credits</span> for
-              free, I&apos;ve implemented a rate limiter to prevent abuse. If
-              you encounter a rate limit, you can try again{" "}
-              <span className="text-nvidia font-medium">after an hour</span> has
-              elapsed.
-            </li>
-            <li>
-              By testing any model, you assume the risk of any harm caused by
-              any response or output of the model. Please do not upload any
-              confidential information or personal data. Your use is logged for
-              security.
-            </li>
-            <li>
-              This chatbot is for demonstration purposes only and is not
-              affiliated with either NVIDIA or Vercel in any way.
-            </li>
-            <li>
-              All the logos and trademarks are the properties of their
-              respective owners. I do not own any of them. This is a
-              non-commercial project.
-            </li>
-          </ul>
+          <h2 className="text-base font-medium text-center">
+            Ready to turn your ideas into action? 🚀
+          </h2>
+          <p className="mt-4 text-center text-sm text-primary/80">
+            InnoPlan Chatbot helps you generate detailed business plans, pitch scripts, and task assignments based on your startup idea. Simply provide your idea, and let the chatbot guide you through the planning process!
+          </p>
+          <p className="mt-4 text-center text-sm text-primary/80">
+            Enter your idea or question to get started!
+          </p>
         </div>
-
         <ChatInput
           input={input}
           setInput={setInput}
           handleSubmit={handleSubmit}
-          model={model}
-          handleModelChange={handleModelChange}
         />
       </div>
     );
@@ -159,8 +122,6 @@ export default function Chat() {
         input={input}
         setInput={setInput}
         handleSubmit={handleSubmit}
-        model={model}
-        handleModelChange={handleModelChange}
       />
     </div>
   );

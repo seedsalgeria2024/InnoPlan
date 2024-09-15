@@ -5,40 +5,18 @@ import Textarea from "react-textarea-autosize";
 import { AiOutlineEnter } from "react-icons/ai";
 import { FaMeta, FaGoogle } from "react-icons/fa6";
 import { SiIbm } from "react-icons/si";
-import { models } from "@/lib/models";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
 
-const getModelIcon = (modelName: string) => {
-  if (modelName.startsWith("meta")) {
-    return <FaMeta className="mr-1.5" />;
-  } else if (modelName.startsWith("google")) {
-    return <FaGoogle className="mr-1.5" />;
-  } else if (modelName.startsWith("ibm")) {
-    return <SiIbm className="mr-1.5" />;
-  } else {
-    return <BsNvidia className="mr-1.5" />;
-  }
-};
 
 type ChatInputRSCProps = {
   input: string;
   setInput: (input: string) => void;
   handleSubmit: (e: React.FormEvent<HTMLFormElement>) => void;
-  model: string;
-  handleModelChange: (model: string) => void;
 };
 
 export default function ChatInput({
   input,
   setInput,
   handleSubmit,
-  model,
-  handleModelChange,
 }: ChatInputRSCProps) {
   return (
     <form
@@ -46,24 +24,6 @@ export default function ChatInput({
       className="fixed bottom-0 left-0 right-0 flex justify-center bg-gradient-to-t from-zinc-100 to-transparent backdrop-blur-lg dark:from-background">
       <div className="w-full max-w-2xl items-center px-6">
         <div className="relative flex w-full flex-col items-start gap-2">
-          <DropdownMenu modal={false}>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="rounded-full">
-                {getModelIcon(model)}
-                {model}
-                <ChevronDown size={14} className="ml-1.5" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {models.map((modelName) => (
-                <DropdownMenuItem
-                  key={modelName}
-                  onSelect={() => handleModelChange(modelName)}>
-                  {getModelIcon(modelName)} {modelName}
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
           <div className="relative flex w-full items-center">
             <Textarea
               name="message"
@@ -100,16 +60,6 @@ export default function ChatInput({
             </Button>
           </div>
         </div>
-        <p className="p-2 text-center text-xs text-zinc-400">
-          Brought to you by{" "}
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className="md:hover:text-nvidia underline underline-offset-2 transition-all duration-150 ease-linear"
-            href="https://lakshb.dev">
-            lakshb.dev
-          </a>
-        </p>
       </div>
     </form>
   );
